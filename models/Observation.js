@@ -7,7 +7,8 @@ const observationSchema = new mongoose.Schema({
     trim: true
   },
   rarity: {
-    type: String
+    type: String,
+    required: true
   },
   notes: {
     type: String

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Moment from 'react-moment'
 import { Col, Card, Badge, Button } from 'react-bootstrap'
+import Moment from 'react-moment'
 
 const ObservationSummary = ({ observation }) => {
   const { id, name, rarity, observationImage, createdAt } = observation
@@ -19,7 +19,7 @@ const ObservationSummary = ({ observation }) => {
           <Badge variant="secondary">{rarity}</Badge>
           <Moment
             className="float-right text-muted"
-            format="D MMM YYYY"
+            format="HH:mm, D MMM YYYY"
             withTitle
           >
             {createdAt}

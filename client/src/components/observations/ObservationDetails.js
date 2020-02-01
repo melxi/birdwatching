@@ -1,7 +1,7 @@
 import React from 'react'
-import Moment from 'react-moment'
 import { connect } from 'react-redux'
 import { Container, Col, Row, Card, Badge } from 'react-bootstrap'
+import Moment from 'react-moment'
 
 const ObservationSummary = ({ observation }) => {
   const { name, rarity, notes, observationImage, createdAt } = observation
@@ -22,10 +22,10 @@ const ObservationSummary = ({ observation }) => {
                 <Badge>{rarity}</Badge>
                 <Moment
                   className="float-right text-muted"
-                  format="D MMM YYYY"
+                  format="HH:mm, D MMM YYYY"
                   withTitle
                 >
-                  <small className="text-muted">{createdAt}</small>
+                  {createdAt}
                 </Moment>
               </div>
             </Card.Body>
@@ -40,7 +40,7 @@ const ObservationSummary = ({ observation }) => {
 const mapStateToProps = (state, ownProps) => {
   const id = ownProps.match.params.id
   return {
-    observation: state.observations.observations.data.find(
+    observation: state.observations.observations.find(
       observation => observation.id === id
     )
   }

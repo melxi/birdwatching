@@ -5,12 +5,8 @@ const Observation = require('../models/Observation')
 //@access public
 exports.getObservations = async (req, res, next) => {
   try {
-    const observations = await Observation.find({})
-    res.status(200).json({
-      success: true,
-      count: observations.length,
-      data: observations.map(observation => observation.toJSON())
-    })
+    const observations = await Observation.find()
+    res.status(200).json(observations)
   } catch (err) {
     next(err)
     res.status(500).json({ error: 'Server error' })
@@ -34,20 +30,16 @@ exports.getObservation = async (req, res, next) => {
 //@desc add a observation
 //@access public
 exports.createObservation = async (req, res, next) => {
-  console.log(req.file)
   try {
     const observation = await new Observation({
       name: req.body.name,
       rarity: req.body.rarity,
       notes: req.body.notes,
-      observationImage: req.file.filename ? req.file.filename : ''
+      observationImage: req.file ? req.file.filename : 'default.jpg'
     })
 
     await observation.save()
-    res.status(201).json({
-      success: true,
-      data: observation
-    })
+    res.status(201).json(observation)
   } catch (err) {
     next(err)
   }

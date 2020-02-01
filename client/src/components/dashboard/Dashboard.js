@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ObservationList from '../observations/ObservationList'
 import { Jumbotron, Button } from 'react-bootstrap'
+import ObservationList from '../observations/ObservationList'
 
 const Dashboard = () => (
   <div>

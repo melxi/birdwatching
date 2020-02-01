@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "SET NODE_ENV=production & node server.js",
-    "server": "SET NODE_ENV=development & nodemon server.js"
+    "server": "SET NODE_ENV=development & nodemon server.js",
+    "build": "npm run build --prefix client && mv client/build build && npm start"
   },
   "keywords": [],
   "author": "",

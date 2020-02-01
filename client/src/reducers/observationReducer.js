@@ -1,8 +1,4 @@
-import {
-  GET_OBSERVATIONS,
-  ADD_OBSERVATION,
-  SORT_OBSERVATIONS
-} from '../actions/types'
+import { GET_OBSERVATIONS, ADD_OBSERVATION } from '../actions/types'
 
 const initialState = {
   observations: [],
@@ -21,14 +17,6 @@ const observationReducer = (state = initialState, action) => {
       return {
         ...state,
         observations: state.observations.concat(action.payload)
-      }
-    case SORT_OBSERVATIONS:
-      return {
-        ...state,
-        observations: state.observations.data
-          .slice(0)
-          .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)),
-        isLoading: true
       }
     default:
       return state

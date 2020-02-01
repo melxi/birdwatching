@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { addObservation } from '../../actions/observationActions'
-import useField from '../../hooks'
 import { Container, Form, Modal, Button } from 'react-bootstrap'
+import useField from '../../hooks'
+import PropTypes from 'prop-types'
 
 const CreateObservation = props => {
   const [name, nameReset] = useField('text')
