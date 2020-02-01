@@ -1,0 +1,21 @@
+POST http://localhost:3001/api/observations 
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name"
+
+Falcon
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="rarity"
+
+common
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="notes"
+
+Falcons are birds of prey in the genus Falco, which includes about 40 species. Falcons are widely distributed on all continents of the world except Antarctica, though closely related raptors did occur there in the Eocene.
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="observationImage"; filename="bird-of-prey-1544985_640.jpg"
+Content-Type: image/jpeg
+
+< ./bird-of-prey-1544985_640.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
